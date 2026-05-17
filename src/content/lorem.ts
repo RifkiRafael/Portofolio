@@ -16,116 +16,167 @@ export type Skill = {
 export type Service = {
   title: string
   description: string
+  icon?:
+    | { kind: 'devicon'; className: string }
+    | { kind: 'img'; src: string; alt: string }
+    | { kind: 'text'; text: string }
 }
 
 export const copy = {
-  brand: 'Portofolio',
+  brand: 'Portfolio',
   nav: [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'Work', href: '#work' },
+    { label: 'Skills', href: '#work' },
     { label: 'Contact', href: '#contact' },
   ],
   hero: {
     name: 'Muhammad Rifki Rafael',
-    role: 'Front-End Developer, UI/UX Designer',
-    eyebrow: 'Lorem ipsum dolor sit',
-    title: ['Lorem', 'Ipsum', 'Dolor'],
+    role: 'Front-End Developer & UI/UX Designer',
+    eyebrow: 'Hello, I am',
+    title: ['Muhammad', 'Rifki', 'Rafael'],
     subtitle:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'A passionate Front-End Developer and Graphic Designer crafting modern, clean, and user-friendly digital experiences. I blend creative visuals with functional interfaces to build websites that are both beautiful and impactful.',
     avatarAlt: 'Profile photo',
     avatarSrc: '/profile.png',
     ctas: [
-      { label: 'Lorem Button', href: '#work' },
-      { label: 'Contact Me', href: '#contact' },
+      { label: 'View Skills', href: '#work' },
+      { label: 'Get in Touch', href: '#contact' },
     ],
     socials: [
       { label: 'GitHub', href: 'https://github.com/RifkiRafael' },
-      { label: 'LinkedIn', href: '#' },
-      { label: 'Email', href: '#' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/rifki-rafael-4b6b71327' },
+      { label: 'Email', href: 'mailto:rifkirafael0707@gmail.com' },
     ] satisfies SocialLink[],
   },
   about: {
     heading: 'Get to Know Me Better',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+      'Discover my journey as a developer and designer, combining technical expertise with creative vision to deliver exceptional digital experiences.',
     greeting: 'Hi, my name is',
     name: 'Muhammad Rifki Rafael',
-    bigTitle: ['I DESIGN FOR', 'GROWTH.'],
+    bigTitle: ['I CREATE', 'DIGITAL', 'EXPERIENCES.'],
     paragraphs: [
-      "Hi! I'm Muhammad Rifki Rafael, a Front-End Developer, UI/UX Designer, and Graphic Designer passionate about creating modern, clean, and user-friendly websites.",
-      'I combine coding and design skills to build digital interfaces that are both visually stunning and highly functional.',
+      'Hi! I am Muhammad Rifki Rafael, a Front-End Developer, UI/UX Designer, and Graphic Designer passionate about creating modern, clean, and user-friendly websites.',
+      'I combine coding and design skills to build digital interfaces that are both visually stunning and highly functional. Every project is an opportunity to push boundaries and create something meaningful.',
     ],
-    cta: { label: 'Start Growing', href: '#work' },
+    cta: { label: 'Explore My Skills', href: '#work' },
     portraitAlt: 'Portrait photo',
-    /**
-     * Put your photo in `public/about.jpg` (or change the path).
-     * If empty, a placeholder portrait will be shown.
-     */
     portraitSrc: '/profile.png',
     stats: [
-      { label: 'Lorem', value: '12+' },
-      { label: 'Ipsum', value: '04' },
-      { label: 'Dolor', value: '99%' },
+      { label: 'Projects', value: '15+' },
+      { label: 'Technologies', value: '12+' },
+      { label: 'Satisfaction', value: '100%' },
     ] satisfies Stat[],
   },
   skills: {
-    heading: 'Skills',
+    heading: 'Technical Skills',
     items: [
-      { label: 'Lorem', value: 86 },
-      { label: 'Ipsum', value: 74 },
-      { label: 'Dolor', value: 92 },
-      { label: 'Sit', value: 68 },
-      { label: 'Amet', value: 81 },
-      { label: 'Elit', value: 77 },
+      { label: 'HTML/CSS', value: 92 },
+      { label: 'JavaScript', value: 85 },
+      { label: 'React', value: 88 },
+      { label: 'UI/UX Design', value: 90 },
+      { label: 'Figma', value: 87 },
+      { label: 'Responsive Design', value: 93 },
     ] satisfies Skill[],
   },
   services: {
-    heading: 'What I Do',
+    heading: 'Skills & Tools',
+    description: 'A comprehensive tech stack and toolkit I use to build modern user interfaces, create stunning designs, and produce engaging digital content.',
+    kicker: 'Expertise',
     items: [
       {
-        title: 'Lorem Service',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit.',
+        title: 'HTML',
+        description: 'Semantic markup, page structure, and accessibility standards.',
+        icon: { kind: 'devicon', className: 'devicon-html5-plain colored' },
       },
       {
-        title: 'Ipsum Service',
-        description:
-          'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        title: 'CSS',
+        description: 'Responsive layouts (Flexbox/Grid), animations, and modern styling.',
+        icon: { kind: 'devicon', className: 'devicon-css3-plain colored' },
       },
       {
-        title: 'Dolor Service',
-        description:
-          'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        title: 'JavaScript',
+        description: 'DOM manipulation, async programming, and interactive UI development.',
+        icon: { kind: 'devicon', className: 'devicon-javascript-plain colored' },
       },
       {
-        title: 'Sit Service',
-        description:
-          'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        title: 'React',
+        description: 'Component-driven architecture, state management, and reusable UI.',
+        icon: { kind: 'devicon', className: 'devicon-react-original colored' },
       },
-    ] satisfies Service[],
+      {
+        title: 'Tailwind CSS',
+        description: 'Utility-first framework for rapid and consistent UI development.',
+        icon: { kind: 'devicon', className: 'devicon-tailwindcss-original colored' },
+      },
+      {
+        title: 'Git',
+        description: 'Version control, branching strategies, and team collaboration.',
+        icon: { kind: 'devicon', className: 'devicon-git-plain colored' },
+      },
+      {
+        title: 'GitHub',
+        description: 'Repository management, pull requests, and CI/CD workflows.',
+        icon: { kind: 'devicon', className: 'devicon-github-original' },
+      },
+      {
+        title: 'PHP',
+        description: 'Server-side scripting, templating, and API integration.',
+        icon: { kind: 'devicon', className: 'devicon-php-plain colored' },
+      },
+      {
+        title: 'Laravel',
+        description: 'MVC framework, routing, and full-stack web applications.',
+        icon: { kind: 'devicon', className: 'devicon-laravel-plain colored' },
+      },
+      {
+        title: 'MySQL',
+        description: 'Relational database design, queries, and data management.',
+        icon: { kind: 'devicon', className: 'devicon-mysql-plain colored' },
+      },
+      {
+        title: 'Figma',
+        description: 'UI/UX design, wireframing, prototyping, and design systems.',
+        icon: { kind: 'devicon', className: 'devicon-figma-plain colored' },
+      },
+      {
+        title: 'Canva',
+        description: 'Visual design for social media, marketing, and content creation.',
+        icon: { kind: 'devicon', className: 'devicon-canva-original colored' },
+      },
+      {
+        title: 'CapCut',
+        description: 'Video editing for short-form content and motion graphics.',
+        icon: { kind: 'img', src: '/icons/capcut.svg', alt: 'CapCut' },
+      },
+      {
+        title: 'Microsoft 365',
+        description: 'Productivity tools including Word, Excel, and PowerPoint.',
+        icon: { kind: 'img', src: '/icons/microsoft365.svg', alt: 'Microsoft 365' },
+      },
+    ] as Service[],
   },
   contact: {
-    heading: "Let's Work Together",
+    heading: 'Let\'s Work Together',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.',
-    infoHeading: 'Let’s Talk',
+      'Have a question or want to collaborate? Feel free to reach out, and I will get back to you as soon as possible.',
+    infoHeading: 'Get in Touch',
     infoItems: [
-      { label: 'Lorem', value: 'lorem@ipsum.test' },
-      { label: 'Ipsum', value: '+00 0000 0000' },
-      { label: 'Dolor', value: 'Lorem, Ipsum City' },
+      { label: 'Email', value: 'rifkirafael0707@gmail.com' },
+      { label: 'Phone', value: '+62 858 8817 9329' },
+      { label: 'Location', value: 'Dramaga, Bogor' },
     ],
     form: {
-      nameLabel: 'Name',
-      emailLabel: 'Email',
-      messageLabel: 'Message',
+      nameLabel: 'Full Name',
+      emailLabel: 'Email Address',
+      messageLabel: 'Your Message',
       submitLabel: 'Send Message',
     },
   },
   footer: {
-    note: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    note: 'Available for projects',
     copyright:
-      '© Lorem Ipsum. All rights reserved.',
+      '© 2026 Muhammad Rifki Rafael. All rights reserved.',
   },
 } as const
-
