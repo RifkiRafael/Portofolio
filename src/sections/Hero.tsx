@@ -36,7 +36,7 @@ export function Hero() {
 
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 18 }}>
               {copy.hero.socials.map((s) => (
-                <a key={s.label} className="pill" href={s.href}>
+                <a key={s.label} className="pill" href={s.href} target="_blank" rel="noopener noreferrer">
                   {s.label}
                 </a>
               ))}
@@ -46,12 +46,12 @@ export function Hero() {
           <div className="span5">
             <div className="card lift" style={{ height: '100%', minHeight: 260 }}>
               <div className="cardInset">
-                <div className="kicker">Lorem Brutalism</div>
+                <div className="kicker">Modern Design</div>
                 <h3 className="h3" style={{ marginTop: 8 }}>
-                  Ipsum Grid
+                  Creative Solutions
                 </h3>
                 <p className="lead" style={{ marginTop: 8 }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+                  Building digital experiences that combine aesthetics with functionality, creating interfaces that users love.
                 </p>
               </div>
 

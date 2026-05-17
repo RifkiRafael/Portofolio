@@ -2,21 +2,21 @@
 
 :root {
   /* Neo-brutalism tokens (light first) */
-  --bg: #cfe1ff;
+  --bg: #d0e4ff;
   --surface: #ffffff;
-  --surface-2: #f6fbff;
+  --surface-2: #f8fbff;
   --text: #0a0a0f;
   --muted: rgba(10, 10, 15, 0.75);
   --muted-2: rgba(10, 10, 15, 0.6);
   --border: rgba(10, 10, 15, 0.25);
   --border-strong: #0a0a0f;
   --shadow-color: rgba(10, 10, 15, 1);
-  --accent: #1d4ed8;
+  --accent: #2563eb;
   --accent-2: #f97316;
   --accent-3: #22c55e;
   --accent-4: #a855f7;
-  --grid: rgba(10, 10, 15, 0.12);
-  --nav-bg: rgba(255, 255, 255, 0.75);
+  --grid: rgba(10, 10, 15, 0.10);
+  --nav-bg: rgba(255, 255, 255, 0.90);
 
   --radius: 10px;
   --b: 3px;
@@ -46,12 +46,22 @@ body {
     linear-gradient(to right, var(--grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid) 1px, transparent 1px),
     /* playful accents */
-    radial-gradient(900px 680px at 16% -10%, rgba(29, 78, 216, 0.25), transparent 55%),
-    radial-gradient(860px 660px at 110% 10%, rgba(249, 115, 22, 0.22), transparent 55%),
-    radial-gradient(900px 700px at 50% 120%, rgba(168, 85, 247, 0.16), transparent 50%),
+    radial-gradient(900px 680px at 16% -10%, rgba(29, 78, 216, 0.28), transparent 55%),
+    radial-gradient(860px 660px at 110% 10%, rgba(249, 115, 22, 0.25), transparent 55%),
+    radial-gradient(900px 700px at 50% 120%, rgba(168, 85, 247, 0.20), transparent 50%),
     var(--bg);
   background-size: 44px 44px, 44px 44px, auto, auto, auto, auto;
   color: var(--text);
+  animation: backgroundShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position: 0 0, 0 0, 16% -10%, 110% 10%, 50% 120%;
+  }
+  100% {
+    background-position: 0 0, 0 0, 20% -8%, 108% 12%, 48% 118%;
+  }
 }
 
 * {
@@ -68,13 +78,87 @@ svg {
   display: block;
 }
 
+.techIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 2px solid var(--border-strong);
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  box-shadow: 6px 6px 0 var(--shadow-color);
+  flex: 0 0 auto;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.techIconWrap:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--shadow-color);
+}
+
+.techIcon {
+  font-size: 24px;
+  line-height: 1;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.techIconImg {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.techIconText {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.servicesActions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.servicesToggleBtn {
+  border: 2px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 6px 6px 0 var(--shadow-color);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.servicesToggleBtn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 7px 7px 0 var(--shadow-color);
+}
+
+.servicesToggleBtn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 4px 4px 0 var(--shadow-color);
+}
+
 ::selection {
-  background: rgba(29, 78, 216, 0.25);
+  background: rgba(37, 99, 235, 0.3);
+  color: var(--text);
 }
 
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .container {

@@ -4,6 +4,7 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow-x) var(--shadow-y) 0 var(--shadow-color);
   padding: 18px;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .cardInset {
@@ -14,11 +15,11 @@
 }
 
 .lift {
-  transition: transform 140ms ease, box-shadow 140ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 .lift:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: calc(var(--shadow-x) + 6px) calc(var(--shadow-y) + 6px) 0 var(--shadow-color);
+  transform: translate(-5px, -5px);
+  box-shadow: calc(var(--shadow-x) + 8px) calc(var(--shadow-y) + 8px) 0 var(--shadow-color);
 }
 
 .btn {
@@ -36,13 +37,13 @@
   gap: 10px;
   cursor: pointer;
   box-shadow: 6px 6px 0 var(--shadow-color);
-  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease, color 140ms ease,
-    border-color 140ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, color 160ms ease,
+    border-color 160ms ease;
 }
 
 .btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 10px 10px 0 var(--shadow-color);
+  transform: translate(-3px, -3px);
+  box-shadow: 12px 12px 0 var(--shadow-color);
   background: #fff;
 }
 
@@ -54,7 +55,9 @@
 }
 
 .btnPrimary:hover {
-  box-shadow: 10px 10px 0 var(--shadow-color);
+  box-shadow: 12px 12px 0 var(--shadow-color);
+  background: var(--accent);
+  filter: brightness(1.1);
 }
 
 .pill {
@@ -70,6 +73,12 @@
     'Courier New', monospace;
   font-size: 12px;
   box-shadow: 4px 4px 0 var(--shadow-color);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.pill:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--shadow-color);
 }
 
 .navPill {
@@ -99,6 +108,18 @@
   border-radius: 2px;
   background: var(--accent);
   box-shadow: 0 0 0 2px rgba(10, 10, 15, 0.18);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
 }
 
 .progressRow {
@@ -358,7 +379,21 @@
   line-height: 0.95;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--text);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-4) 50%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 8s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .aboutBody {
@@ -380,13 +415,23 @@
   aspect-ratio: 1 / 1;
   border-radius: 999px;
   background:
-    radial-gradient(circle at 30% 20%, rgba(249, 115, 22, 0.22), transparent 45%),
-    radial-gradient(circle at 70% 70%, rgba(29, 78, 216, 0.18), transparent 55%),
+    radial-gradient(circle at 30% 20%, rgba(249, 115, 22, 0.28), transparent 45%),
+    radial-gradient(circle at 70% 70%, rgba(29, 78, 216, 0.24), transparent 55%),
     #f43f5e;
   border: var(--b) solid var(--border-strong);
   box-shadow: 14px 14px 0 var(--shadow-color);
   display: grid;
   place-items: center;
+  animation: portraitFloat 6s ease-in-out infinite;
+}
+
+@keyframes portraitFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .aboutPortrait {
@@ -432,19 +477,32 @@
   font-weight: 900;
   letter-spacing: 0.02em;
   font-size: 12px;
+  animation: bubbleBounce 3s ease-in-out infinite;
+}
+
+@keyframes bubbleBounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
 }
 
 .aboutBubbleTop {
   top: 48px;
   left: 38px;
+  animation-delay: 0s;
 }
 .aboutBubbleRight {
   top: 34%;
   right: 26px;
+  animation-delay: 1s;
 }
 .aboutBubbleBottom {
   bottom: 64px;
   right: 64px;
+  animation-delay: 2s;
 }
 
 @media (max-width: 900px) {
